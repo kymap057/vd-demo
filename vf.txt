@@ -1,0 +1,49 @@
+--------------static----------------
+Roter(config)#ip nat inside source static 192.168.1.2 10.0.0.1
+Router(config)#int
+Router(config)#interface fa0/0-- cong vao 192.168.1.0
+Router(config-if)#
+Router(config-if)#ip nat 
+Router(config-if)#ip nat in
+Router(config-if)#ip nat inside 
+Router(config-if)#exit
+Router(config)#interface fa0/1-- cong 10.0.0.0
+Router(config-if)#ip nat out 
+Router(config-if)#ip nat oout
+Router(config-if)#ip nat out
+Router(config-if)#ip nat outside 
+Router(config-if)#exit
+-------------------dynamic----------
+Router(config)#ip nat bool vidu 10.0.1.2 10.0.1.10 netmask 255.255.255.0
+Router(config)#ip access-list standard 1 
+Router(config-std-nacl)#permit 192.168.1.0 0.0.0.255 
+Router(config)#ip nat inside  source list 1 pool vidu 
+Router(config)#interface fa0/0
+Router(config-if)#ip nat inside 
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface fa0/1
+Router(config-if)#ip nat outside 
+Router(config-if)#exit
+Router(config)#
+----------------overload--------
+Router(config)#ip access-list standard overload
+Router(config-std-nacl)#per
+Router(config-std-nacl)#permit any-- tat ca ip trong mang
+Router(config-std-nacl)#exit
+Router(config)#ip nat inside source list overload interface fa0/1
+Router(config)#interface fa0/0
+Router(config-if)#ip nat inside 
+Router(config-if)#exit
+Router(config)#interface fa0/1
+Router(config-if)#ip nat outside 
+Router(config-if)#exit
+Router(config)#
+--------------inside static-------------
+Router(config)#ip nat inside source static tcp 192.168.1.4 ?
+  <1-65535>  Local UDP/TCP port
+Router(config)#ip nat inside source static tcp 192.168.1.4 80 ?
+  A.B.C.D  Inside global IP address
+Router(config)#ip nat inside source static tcp 192.168.1.4 80 10.0.1.2 ?
+  <1-65535>  Global UDP/TCP port
+Router(config)#ip nat inside source static tcp 192.168.1.4 80 10.0.1.2 80
