@@ -6,5 +6,8 @@
 - git commit -m "status"
 - git push 
 ## tạo 1 branch: 
-- git brach <tên branch>
+- git branch <tên branch>
 - update lên branch: git push origin <tên branch> 
+## kiểm tra :
+- file .gitignore ngăn ko up 1 số file.
+- git status
