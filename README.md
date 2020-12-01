@@ -11,3 +11,5 @@
 ## kiểm tra :
 - file .gitignore ngăn ko up 1 số file.
 - git status
+- cập nhật về máy local git pull origin <branch name>
+- gộp nhánh ( trở về nhánh chính)-> git merge <nhánh cần gộp>
